@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Plant Care - We are nice people with a lot of experience</title>
+
+   <!-- Bootstrap CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+   <!-- Custom CSS -->
+   <style>
+      :root {
+         --plantcare-primary-green: #4a7c59;
+         --plantcare-light-green: #c8d5b9;
+         --plantcare-sage-bg: #e8f0e3;
+         --plantcare-text-dark: #2c3e50;
+         --plantcare-text-muted: #6c757d;
+      }
+
+      .plantcare-body-override {
+         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         background-color: var(--plantcare-sage-bg);
+         margin: 0;
+         padding: 0;
+         min-height: 100vh;
+      }
+
+      .plantcare-hero-section {
+         min-height: 100vh;
+         background-color: var(--plantcare-sage-bg);
+         display: flex;
+         align-items: center;
+         padding: 2rem 0;
+         position: relative;
+      }
+
+      .plantcare-main-content-wrapper {
+         position: relative;
+         width: 100%;
+         min-height: 500px;
+      }
+
+      .plantcare-background-image-container {
+         position: relative;
+         width: 100%;
+         height: 500px;
+         border-radius: 20px;
+         overflow: hidden;
+         background: linear-gradient(135deg, var(--plantcare-light-green) 0%, #b8c9a8 100%);
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+
+      .plantcare-plant-illustration {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         object-position: center;
+      }
+
+      .plantcare-content-card {
+         position: absolute;
+         top: 50%;
+         left: 2rem;
+         transform: translateY(-50%);
+         background: white;
+         border-radius: 15px;
+         padding: 2rem;
+         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+         max-width: 350px;
+         width: calc(100% - 4rem);
+         z-index: 10;
+      }
+
+      .plantcare-content-card::before {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 0;
+         right: 0;
+         height: 6px;
+         background: var(--plantcare-primary-green);
+         border-radius: 15px 15px 0 0;
+      }
+
+      .plantcare-main-heading {
+         font-size: 1.8rem;
+         font-weight: 700;
+         color: var(--plantcare-text-dark);
+         line-height: 1.3;
+         margin-bottom: 1rem;
+      }
+
+      .plantcare-mission-label {
+         color: var(--plantcare-primary-green);
+         font-weight: 600;
+         margin-bottom: 0.5rem;
+         font-size: 0.9rem;
+      }
+
+      .plantcare-mission-text {
+         color: var(--plantcare-text-muted);
+         font-size: 0.95rem;
+         line-height: 1.5;
+         margin: 0;
+      }
+
+      .plantcare-stats-container {
+         display: flex;
+         flex-direction: column;
+         gap: 1.5rem;
+         margin-left: 2rem;
+      }
+
+      .plantcare-stat-card {
+         background: var(--plantcare-primary-green);
+         color: white;
+         padding: 1.5rem 1.2rem;
+         border-radius: 12px;
+         text-align: center;
+         box-shadow: 0 8px 25px rgba(74, 124, 89, 0.3);
+         transition: transform 0.3s ease, box-shadow 0.3s ease;
+         max-width: 200px;
+      }
+
+      .plantcare-stat-card:hover {
+         transform: translateY(-5px);
+         box-shadow: 0 12px 35px rgba(74, 124, 89, 0.4);
+      }
+
+      .plantcare-stat-number {
+         font-size: 2.5rem;
+         font-weight: 700;
+         margin-bottom: 0.3rem;
+         display: block;
+      }
+
+      .plantcare-stat-label {
+         font-size: 1rem;
+         font-weight: 500;
+         opacity: 0.9;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1200px) {
+         .plantcare-content-card {
+            max-width: 320px;
+         }
+
+         .plantcare-main-heading {
+            font-size: 1.6rem;
+         }
+
+         .plantcare-stat-number {
+            font-size: 2.2rem;
+         }
+      }
+
+      @media (max-width: 992px) {
+         .plantcare-main-content-wrapper {
+            min-height: 400px;
+         }
+
+         .plantcare-background-image-container {
+            height: 400px;
+         }
+
+         .plantcare-content-card {
+            position: relative;
+            top: auto;
+            left: auto;
+            transform: none;
+            max-width: 100%;
+            margin-bottom: 2rem;
+            width: 100%;
+         }
+
+         .plantcare-stats-container {
+            margin-left: 0;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+         }
+
+         .plantcare-stat-card {
+            flex: 1;
+            min-width: 150px;
+            max-width: 180px;
+         }
+      }
+
+      @media (max-width: 768px) {
+         .plantcare-hero-section {
+            padding: 1rem 0;
+         }
+
+         .plantcare-main-heading {
+            font-size: 1.5rem;
+         }
+
+         .plantcare-content-card {
+            padding: 1.5rem;
+         }
+
+         .plantcare-background-image-container {
+            height: 300px;
+         }
+
+         .plantcare-stats-container {
+            flex-direction: column;
+            align-items: center;
+         }
+
+         .plantcare-stat-card {
+            max-width: 250px;
+            width: 100%;
+         }
+
+         .plantcare-stat-number {
+            font-size: 2rem;
+         }
+      }
+
+      @media (max-width: 576px) {
+         .plantcare-content-card {
+            left: 1rem;
+            width: calc(100% - 2rem);
+            max-width: none;
+            padding: 1.2rem;
+         }
+
+         .plantcare-main-heading {
+            font-size: 1.3rem;
+         }
+
+         .plantcare-background-image-container {
+            height: 250px;
+         }
+
+         .plantcare-stats-container {
+            margin-left: 0;
+         }
+      }
+
+      /* Animation for counter - with unique prefix */
+      .plantcare-counter {
+         transition: all 0.3s ease;
+      }
+
+      /* Loading animation - with unique prefix */
+      .plantcare-fade-in {
+         opacity: 0;
+         transform: translateY(30px);
+         animation: plantcareFadeInUp 0.8s ease forwards;
+      }
+
+      .plantcare-fade-in.plantcare-delay-1 {
+         animation-delay: 0.2s;
+      }
+
+      .plantcare-fade-in.plantcare-delay-2 {
+         animation-delay: 0.4s;
+      }
+
+      .plantcare-fade-in.plantcare-delay-3 {
+         animation-delay: 0.6s;
+      }
+
+      @keyframes plantcareFadeInUp {
+         to {
+            opacity: 1;
+            transform: translateY(0);
+         }
+      }
+
+      /* Additional styling for better visual hierarchy */
+      .plantcare-content-section {
+         position: relative;
+         z-index: 1;
+      }
+   </style>
+</head>
+
+<body class="plantcare-body-override">
+   <section class="plantcare-hero-section">
+      <div class="container-fluid">
+         <div class="row align-items-center justify-content-center">
+            <!-- Main Content Area with Background Image and Overlaid Card -->
+            <div class="col-lg-8 col-md-8 col-12">
+               <div class="plantcare-main-content-wrapper plantcare-fade-in">
+                  <!-- Background Image Container -->
+                  <div class="plantcare-background-image-container">
+                     <img
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-02LvYnLgL7uRe5mWDBES0Gk6POgwUe.png"
+                        alt="Person caring for plants" class="plantcare-plant-illustration">
+                  </div>
+
+                  <!-- Overlaid Content Card -->
+                  <div class="plantcare-content-card">
+                     <h1 class="plantcare-main-heading">
+                        We are nice people with a lot of experience.
+                     </h1>
+                     <div class="plantcare-mission-label">Our Mission:</div>
+                     <p class="plantcare-mission-text">
+                        is to provide our customers with responsive service and unsurpassed quality at very competitive
+                        price.
+                     </p>
+                  </div>
+               </div>
+            </div>
+
+            <!-- Statistics -->
+            <div class="col-lg-3 col-md-4 col-12">
+               <div class="plantcare-stats-container" id="plantcareStatsContainer">
+                  <div class="plantcare-stat-card plantcare-fade-in plantcare-delay-2">
+                     <span class="plantcare-stat-number plantcare-counter" data-plantcare-target="10">0</span>
+                     <span class="plantcare-stat-label">Years of experience</span>
+                  </div>
+
+                  <div class="plantcare-stat-card plantcare-fade-in plantcare-delay-2">
+                     <span class="plantcare-stat-number plantcare-counter" data-plantcare-target="95">0</span>
+                     <span class="plantcare-stat-label">Happy Customers</span>
+                  </div>
+
+                  <div class="plantcare-stat-card plantcare-fade-in plantcare-delay-3">
+                     <span class="plantcare-stat-number plantcare-counter" data-plantcare-target="100">0</span>
+                     <span class="plantcare-stat-label">Satisfaction</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- Bootstrap JS -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+   <!-- Counter Up Script with unique namespace -->
+   <script>
+      // Namespace all functions to avoid conflicts
+      window.PlantCareModule = (function () {
+         'use strict';
+
+         // Counter Up Animation with unique function name
+         function animatePlantCareCounter(element) {
+            const target = parseInt(element.getAttribute('data-plantcare-target'));
+            const increment = target / 100;
+            let current = 0;
+
+            const timer = setInterval(() => {
+               current += increment;
+               if (current >= target) {
+                  current = target;
+                  clearInterval(timer);
+               }
+
+               // Format the number based on the target
+               if (target === 95) {
+                  element.textContent = Math.floor(current) + 'K';
+               } else if (target === 100) {
+                  element.textContent = Math.floor(current) + '%';
+               } else {
+                  element.textContent = Math.floor(current) + '+';
+               }
+            }, 20);
+         }
+
+         // Intersection Observer for triggering animations with unique options
+         const plantCareObserverOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -50px 0px'
+         };
+
+         const plantCareObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+               if (entry.isIntersecting) {
+                  const counters = entry.target.querySelectorAll('.plantcare-counter');
+                  counters.forEach(counter => {
+                     animatePlantCareCounter(counter);
+                  });
+                  plantCareObserver.unobserve(entry.target);
+               }
+            });
+         }, plantCareObserverOptions);
+
+         // Initialize function
+         function initPlantCare() {
+            const statsContainer = document.getElementById('plantcareStatsContainer');
+            if (statsContainer) {
+               plantCareObserver.observe(statsContainer);
+            }
+
+            // Add hover effects to stat cards with unique selectors
+            const statCards = document.querySelectorAll('.plantcare-stat-card');
+            statCards.forEach(card => {
+               card.addEventListener('mouseenter', () => {
+                  card.style.transform = 'translateY(-8px) scale(1.02)';
+               });
+
+               card.addEventListener('mouseleave', () => {
+                  card.style.transform = 'translateY(0) scale(1)';
+               });
+            });
+         }
+
+         // Return public methods
+         return {
+            init: initPlantCare
+         };
+      })();
+
+      // Initialize when DOM is loaded
+      if (document.readyState === 'loading') {
+         document.addEventListener('DOMContentLoaded', window.PlantCareModule.init);
+      } else {
+         window.PlantCareModule.init();
+      }
+   </script>
+</body>
+
+</html>
