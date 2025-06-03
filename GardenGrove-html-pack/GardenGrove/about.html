@@ -26,6 +26,353 @@
    <link rel="stylesheet" href="assets/css/flaticon.css">
    <link rel="stylesheet" href="assets/css/default.css">
    <link rel="stylesheet" href="assets/css/style.css">
+
+   <style>
+      :root {
+         --primary-green: #2d5a3d;
+         --light-green: #4a7c59;
+         --accent-green: #6faa7a;
+         --text-dark: #333;
+         --text-light: #666;
+         --bg-light: #f8f9fa;
+      }
+
+      /* Hero Section */
+      .hero-section1 {
+         background: linear-gradient(rgba(45, 90, 61, 0.8), rgba(45, 90, 61, 0.8)), url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+         background-size: cover;
+         background-position: center;
+         height: 400px;
+         display: flex;
+         align-items: center;
+         color: white;
+         position: relative;
+      }
+
+      .hero-content h1 {
+         font-size: 3.5rem;
+         font-weight: 700;
+         text-transform: uppercase;
+         letter-spacing: 2px;
+         color: var(--bg-light);
+      }
+
+      .hero-subtitle {
+         font-size: 1.1rem;
+         opacity: 0.9;
+         color: #e7e7e7;
+      }
+
+      .breadcrumb-custom {
+         background: transparent;
+         padding: 0;
+         margin-bottom: 2rem;
+      }
+
+      .breadcrumb-custom .breadcrumb-item a {
+         color: white !important;
+         text-decoration: none;
+      }
+
+      .breadcrumb-custom .breadcrumb-item.active {
+         color: var(--accent-green);
+      }
+
+      /* footer-trail */
+      .footer-trail {
+         background: #1a3a2a;
+         color: white;
+         padding: 60px 0 30px;
+      }
+
+      .footer-trail h5 {
+         color: var(--accent-green);
+         margin-bottom: 20px;
+         text-transform: uppercase;
+         letter-spacing: 1px;
+      }
+
+      .footer-trail ul {
+         list-style: none;
+         padding: 0;
+      }
+
+      .footer-trail ul li {
+         margin-bottom: 10px;
+      }
+
+      .footer-trail ul li a {
+         color: #ccc;
+         text-decoration: none;
+         transition: color 0.3s ease;
+      }
+
+      .footer-trail ul li a:hover {
+         color: var(--accent-green);
+      }
+
+      .social-icons a {
+         display: inline-block;
+         width: 40px;
+         height: 40px;
+         background: var(--primary-green);
+         color: white;
+         text-align: center;
+         line-height: 40px;
+         border-radius: 50%;
+         margin-right: 10px;
+         transition: all 0.3s ease;
+      }
+
+      .social-icons a:hover {
+         background: var(--accent-green);
+         transform: translateY(-3px);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+         .hero-content h1 {
+            font-size: 2.5rem;
+         }
+
+         .sidebar {
+            margin-top: 40px;
+         }
+
+         .work-step {
+            margin-bottom: 40px;
+         }
+      }
+
+      /* Smooth Scrolling */
+      html {
+         scroll-behavior: smooth;
+      }
+
+      /* Loading Animation */
+      .fade-in {
+         opacity: 0;
+         transform: translateY(30px);
+         transition: all 0.6s ease;
+      }
+
+      .fade-in.visible {
+         opacity: 1;
+         transform: translateY(0);
+      }
+   </style>
+   <style>
+      .timeline {
+         position: relative;
+         padding: 2rem 0;
+      }
+
+      .timeline::before {
+         content: '';
+         position: absolute;
+         left: 50%;
+         top: 0;
+         bottom: 0;
+         width: 4px;
+         background: #0a3c2e;
+         transform: translateX(-50%);
+      }
+
+      .timeline-item {
+         position: relative;
+         margin-bottom: 5rem;
+         display: flex;
+         flex-wrap: wrap;
+         align-items: flex-start;
+         opacity: 0;
+         transform: translateY(50px);
+         transition: all 0.8s ease-in-out;
+      }
+
+      .timeline-item.visible {
+         opacity: 1;
+         transform: translateY(0);
+      }
+
+      .timeline-content {
+         background: #fff;
+         padding: 1rem 1.25rem;
+         border-radius: 10px;
+         box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+         max-width: 320px;
+         flex: 1;
+         position: relative;
+         z-index: 1;
+         margin-top: -30px;
+      }
+
+      .timeline-year {
+         font-size: 6rem;
+         font-weight: 900;
+         opacity: 0.05;
+         position: absolute;
+         top: -10px;
+         z-index: 0;
+      }
+
+      .timeline-image {
+         flex: 1;
+         max-width: 320px;
+         height: 200px;
+         overflow: hidden;
+         border-radius: 10px;
+         margin-bottom: 0.5rem;
+         position: relative;
+         z-index: 0;
+      }
+
+      .timeline-image img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+
+      .timeline-left .timeline-content {
+         margin-left: auto;
+      }
+
+      .timeline-right .timeline-content {
+         margin-right: auto;
+      }
+
+      .timeline-left {
+         flex-direction: row-reverse;
+      }
+
+      .timeline-left .timeline-year {
+         right: calc(50% + 10px);
+      }
+
+      .timeline-right .timeline-year {
+         left: calc(50% + 10px);
+      }
+
+      .timeline-indicator {
+         position: absolute;
+         width: 36px;
+         height: 36px;
+         color: #0a3c2e;
+         font-size: 1.25rem;
+         text-align: center;
+         line-height: 36px;
+         background: #fff;
+         border-radius: 50%;
+         box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+         top: 45%;
+         z-index: 2;
+      }
+
+      .timeline-left .timeline-indicator {
+         left: 50%;
+         transform: translateX(-50%);
+      }
+
+      .timeline-right .timeline-indicator {
+         right: 50%;
+         transform: translateX(50%);
+      }
+
+      @media (max-width: 1399px) {
+         .timeline-left .timeline-year {
+            right: calc(65%);
+         }
+
+         .timeline-right .timeline-year {
+            left: calc(65%);
+         }
+      }
+
+      @media (max-width:1199px) {
+         .timeline-left .timeline-year {
+            right: calc(75%);
+         }
+
+         .timeline-right .timeline-year {
+            left: calc(75%);
+         }
+
+      }
+
+      @media(max-width:991px) {
+         .timeline-left .timeline-year {
+            top: 65%;
+         }
+
+         .timeline-right .timeline-year {
+            top: 65%;
+         }
+      }
+
+      @media (max-width: 768px) {
+         .timeline::before {
+            left: 50%;
+            transform: translateX(-50%);
+         }
+
+         .timeline-item {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+         }
+
+         .timeline-left .timeline-content,
+         .timeline-right .timeline-content {
+            margin: -20px auto 0 auto;
+         }
+
+         .timeline-year {
+            position: relative;
+            font-size: 4rem;
+            text-align: center;
+            left: 0;
+            margin-bottom: 0.25rem;
+         }
+
+         .timeline-indicator {
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            margin-bottom: 1rem;
+            top: auto;
+         }
+
+         .timeline-left .timeline-year {
+            left: -22%;
+            top: -20px;
+         }
+
+         .timeline-right .timeline-year {
+            left: 22%;
+            top: -20px;
+         }
+      }
+
+      @media (max-width: 425px) {
+         .timeline-year {
+            font-size: 3.5rem;
+         }
+
+         .timeline-content,
+         .timeline-image {
+            max-width: 100%;
+            height: auto;
+         }
+
+         .timeline-left .timeline-year {
+            left: -25%;
+            top: -20px;
+         }
+
+         .timeline-right .timeline-year {
+            left: 25%;
+            top: -20px;
+         }
+      }
+   </style>
 </head>
 
 <body>
@@ -129,11 +476,7 @@
                                              <li><a href="team-details.html">Team Details</a></li>
                                           </ul>
                                        </li>
-                                       <li><a href="shop.html">Shop</a></li>
-                                       <li><a href="shop-details.html">Shop Details</a></li>
-                                       <li><a href="wishlist.html">Wishlist</a></li>
-                                       <li><a href="cart.html">Cart</a></li>
-                                       <li><a href="checkout.html">Checkout</a></li>
+
                                        <li><a href="faq.html">FAQ</a></li>
                                     </ul>
                                  </li>
@@ -150,7 +493,8 @@
                      </div>
                      <div class="header-main-right header-main-right-header1">
                         <a href="contact.html" class="border-btn-rounded d-none d-lg-inline-flex"><i
-                              class="fal fa-farm"></i><span>Get a
+                              class="fas fa-tractor"></i>
+                           <span>Get a
                               Quote</span></a>
                         <div class="menu-bar d-xl-none">
                            <a class="side-toggle" href="javascript:void(0)">
@@ -167,8 +511,6 @@
             </div>
          </div>
       </div>
-
-
    </header>
    <!-- header area end -->
 
@@ -185,7 +527,8 @@
                            <img src="assets/img/logo/logo-bl.png" alt="Logo">
                         </a>
                      </div>
-                     <div class="col-3 text-end"><button class="side-info-close"><i class="fal fa-times"></i></button>
+                     <div class="col-3 text-end"><button class="side-info-close"><i class="fas fa-times"></i>
+                        </button>
                      </div>
                   </div>
                </div>
@@ -229,7 +572,8 @@
       <div class="offcanvas-overlay-white"></div>
       <div class="fix">
          <div class="sidebar-action sidebar-cart">
-            <button class="close-sidebar">Close<i class="fal fa-times"></i></button>
+            <button class="close-sidebar">Close<i class="fas fa-times"></i>
+            </button>
             <h4 class="sidebar-action-title">Shopping Cart</h4>
             <div class="sidebar-action-list">
                <div class="sidebar-list-item">
@@ -242,7 +586,8 @@
                         <span class="item-number">1 ×</span>
                         <span class="price-now">$24.00</span>
                      </div>
-                     <button class="remove-item"><i class="fal fa-times"></i></button>
+                     <button class="remove-item"><i class="fas fa-times"></i>
+                     </button>
                   </div>
                </div>
                <div class="sidebar-list-item">
@@ -255,7 +600,8 @@
                         <span class="item-number">1 ×</span>
                         <span class="price-now">$12.00</span>
                      </div>
-                     <button class="remove-item"><i class="fal fa-times"></i></button>
+                     <button class="remove-item"><i class="fas fa-times"></i>
+                     </button>
                   </div>
                </div>
                <div class="sidebar-list-item">
@@ -268,7 +614,8 @@
                         <span class="item-number">1 ×</span>
                         <span class="price-now">$42.00</span>
                      </div>
-                     <button class="remove-item"><i class="fal fa-times"></i></button>
+                     <button class="remove-item"><i class="fas fa-times"></i>
+                     </button>
                   </div>
                </div>
 
@@ -283,29 +630,20 @@
             </div>
          </div>
       </div>
-      <!-- side toggle end -->
-      <!-- data-background="assets/img/bg/page-title-bg.jpg" -->
-      <!-- page title area start  -->
-      <section class="page-title-area">
+
+      <!-- page title area start -->
+      <section class="hero-section1">
          <div class="container">
-            <div class="row">
-               <div class="col-lg-12">
-                  <div class="page-title-wrapper">
-
-                     <p>Provides hassle-free backyard transformation</p>
-                     <h1 class="page-title">about us</h1>
-                     <div class="breadcrumb-menu page-title-meta">
-                        <nav aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs">
-                           <ul class="trail-items">
-                              <li class="trail-item trail-begin"><a href="index.html"><span>home</span></a></li>
-                              <li class="trail-item trail-end"><span>about us</span></li>
-                           </ul>
-                        </nav>
-                     </div>
-                  </div>
-               </div>
+            <div class="hero-content">
+               <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb breadcrumb-custom">
+                     <li class="breadcrumb-item"><a href="index.html"><i class="fas fa-home"></i> HOME</a></li>
+                     <li class="breadcrumb-item active" aria-current="page">ABOUT</li>
+                  </ol>
+               </nav>
+               <p class="hero-subtitle">PROVIDES HASSLE-FREE BACKYARD TRANSFORMATION</p>
+               <h1>ABOUT US</h1>
             </div>
-
          </div>
       </section>
       <!-- page title area end  -->
@@ -319,8 +657,8 @@
 
                <div class="col-lg-6">
                   <div class="about-content mb-30">
-                     <div class="section-title">
-                        <span class="section-subtitle">about us</span>
+                     <div class="section-title section-title-wrap">
+                        <span class="section-subtitle section-subtitle-wrap">about us</span>
                         <h2 class="section-main-title mb-20">an Award Winning
                            gardening studio</h2>
                      </div>
@@ -554,59 +892,162 @@
             </div>
          </div>
       </section>
-
       <!-- history area end  -->
+
+      <!-- Experience Area start -->
+      <section class="timeline-area-section mt-4">
+         <div class="container timeline">
+            <!-- Timeline Items from 2012 to 2024 -->
+            <div class="timeline-item timeline-left">
+               <div class="timeline-indicator"><i class="fas fa-leaf"></i></div>
+               <div class="timeline-year">2012</div>
+               <div class="timeline-image">
+                  <img src="assets/images/hero1.webp" alt="2012 Image">
+               </div>
+               <div class="timeline-content">
+                  <h5>Journey Begins</h5>
+                  <p>Started learning new skills and set the foundation.</p>
+               </div>
+            </div>
+            <div class="timeline-item timeline-right">
+               <div class="timeline-indicator"><i class="fas fa-leaf"></i></div>
+               <div class="timeline-year">2014</div>
+               <div class="timeline-image">
+                  <img src="assets/images/hero1.webp" alt="2014 Image">
+               </div>
+               <div class="timeline-content">
+                  <h5>Early Projects</h5>
+                  <p>Worked on hobby projects and gained hands-on experience.</p>
+               </div>
+            </div>
+            <div class="timeline-item timeline-left">
+               <div class="timeline-indicator"><i class="fas fa-leaf"></i></div>
+               <div class="timeline-year">2016</div>
+               <div class="timeline-image">
+                  <img src="assets/images/hero1.webp" alt="2016 Image">
+               </div>
+               <div class="timeline-content">
+                  <h5>Going Professional</h5>
+                  <p>Started contributing to real-world applications.</p>
+               </div>
+            </div>
+            <div class="timeline-item timeline-right">
+               <div class="timeline-indicator"><i class="fas fa-leaf"></i></div>
+               <div class="timeline-year">2018</div>
+               <div class="timeline-image">
+                  <img src="assets/images/hero1.webp" alt="2018 Image">
+               </div>
+               <div class="timeline-content">
+                  <h5>Breakthrough</h5>
+                  <p>Built a notable project that got recognition.</p>
+               </div>
+            </div>
+            <div class="timeline-item timeline-left">
+               <div class="timeline-indicator"><i class="fas fa-leaf"></i></div>
+               <div class="timeline-year">2020</div>
+               <div class="timeline-image">
+                  <img src="assets/images/hero1.webp" alt="2020 Image">
+               </div>
+               <div class="timeline-content">
+                  <h5>Scaling Up</h5>
+                  <p>Took on larger roles and responsibilities.</p>
+               </div>
+            </div>
+            <div class="timeline-item timeline-right">
+               <div class="timeline-indicator"><i class="fas fa-leaf"></i></div>
+               <div class="timeline-year">2024</div>
+               <div class="timeline-image">
+                  <img src="assets/images/hero1.webp" alt="2024 Image">
+               </div>
+               <div class="timeline-content">
+                  <h5>Present Day</h5>
+                  <p>Continuing to innovate, learn, and grow professionally.</p>
+               </div>
+            </div>
+         </div>
+
+      </section>
+
+      <!-- Experience Area End -->
 
    </main>
 
    <!-- footer area start  -->
+   <footer class="footer-trail">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+               <h5>ABOUT US</h5>
+               <p>In that team is an online space between people to clean can be encountered a type of this from or
+                  contact while garden is an outdoor area consisting one or more types of plants.</p>
+               <div class="social-icons mt-3">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+               </div>
+               <div class="mt-3">
+                  <i class="fas fa-phone me-2"></i> 985 659 631 68
+               </div>
+            </div>
 
-   <footer data-background="" class="footer4-bg">
-      <div class="footer-area footer-area4 footer-area4-bg pt-120 pb-120">
-         <div class="footer-4-bg-img">
-            <img src="assets/images/portfolio.jpg" alt="img not found">
-         </div>
-         <div class="container">
-            <div class="footer4-inner footer-4-plant-shape">
-               <div class="row justify-content-center">
-                  <div class="col-lg-8 col-md-12 col-sm-12">
-                     <div class="footer-widget footer4-widget footer4-widget1 mb-0">
-                        <div class="footer-logo">
-                           <a href="index.html"><img src="assets/images/logo-w.png" alt="img not found"></a>
-                        </div>
-                        <div class="footer-text">
-                           <p>Call Us: 800-454-9272, 890-090-0000 <br>
-                              New York, USA – 1060 Firs Avenue, Muswell Hill</p>
-                        </div>
-                        <!-- <div class="footer-btn">
-                       <a href="contact.html" class="border-btn"><i class="fal fa-farm"></i><span>Get a
-                           Quote</span></a>
-                     </div> -->
+            <div class="col-lg-3 col-md-6 mb-4">
+               <h5>MAIN PAGES</h5>
+               <ul>
+                  <li><a href="#">HOME</a></li>
+                  <li><a href="#">ABOUT</a></li>
+                  <li><a href="#">SERVICES</a></li>
+                  <li><a href="#">NEWS</a></li>
+                  <li><a href="#">PRICING</a></li>
+               </ul>
+            </div>
 
-                        <div class="newsletter-form">
-                           <form action="#">
-                              <div class="newsletter-input-wrapper">
-                                 <input type="email" placeholder="Email address">
-                                 <button type="submit" class="fill-btn-rounded">
-                                    subscribe<i class="fal fa-long-arrow-right"></i>
-                                 </button>
-                              </div>
-                           </form>
-                        </div>
-                        <div class="footer-social">
-                           <span>get connect:</span>
-                           <div class="social-links">
-                              <ul>
-                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                 <li><a href="#"><i class="fab fa-behance"></i></a></li>
-                                 <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                                 <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                              </ul>
-                           </div>
-                        </div>
-                     </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+               <h5>OUR SERVICES</h5>
+               <ul>
+                  <li><a href="#">LAWN MOWING</a></li>
+                  <li><a href="#">HEDGE CUTTING</a></li>
+                  <li><a href="#">FLOWER PLANTING</a></li>
+                  <li><a href="#">GARDEN REMODELING</a></li>
+                  <li><a href="#">GARDEN RESTORATION</a></li>
+               </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+               <h5>GET IN TOUCH</h5>
+               <ul>
+                  <li><i class="fas fa-phone me-2"></i> 1-800-700-600</li>
+                  <li><i class="fas fa-envelope me-2"></i> INFO@YOUREMAIL.COM</li>
+                  <li><i class="fas fa-map-marker-alt me-2"></i> 69 EAST 45TH STREET, NEW YORK CITY, NY 10065</li>
+               </ul>
+               <div class="mt-3">
+                  <strong>CONNECT:</strong>
+                  <div class="social-icons mt-2">
+                     <a href="#"><i class="fab fa-facebook-f"></i></a>
+                     <a href="#"><i class="fab fa-twitter"></i></a>
+                     <a href="#"><i class="fab fa-instagram"></i></a>
+                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
                   </div>
                </div>
+            </div>
+         </div>
+
+         <hr class="my-4" style="border-color: #4a7c59;">
+
+         <div class="row align-items-center">
+            <div class="col-md-6">
+               <div class="d-flex align-items-center">
+                  <div class="logo me-3">
+                     <div
+                        style="width: 40px; height: 40px; background: var(--accent-green); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-leaf" style="color: white;"></i>
+                     </div>
+                  </div>
+                  <h4 style="color: var(--accent-green); margin: 0;">Gardomia</h4>
+               </div>
+            </div>
+            <div class="col-md-6 text-md-end">
+               <p class="mb-0">COPYRIGHT & DESIGN BY <strong>GARDOMIA</strong> - 2022</p>
             </div>
          </div>
       </div>
@@ -668,6 +1109,7 @@
    </script>
    <!-- Bootstrap JS -->
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   <!-- <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script> -->
 
    <!-- Counter Up Script with unique namespace -->
    <script>
@@ -749,7 +1191,20 @@
       } else {
          window.PlantCareModule.init();
       }
+
+      function revealOnScroll() {
+         const timelineItems = $('.timeline-item');
+         const scrollPos = $(window).scrollTop() + $(window).height();
+         timelineItems.each(function () {
+            const top = $(this).offset().top;
+            if (scrollPos > top + 100) {
+               $(this).addClass('visible');
+            }
+         });
+      }
+      $(window).on('scroll load', revealOnScroll);
    </script>
+
 </body>
 
 </html>

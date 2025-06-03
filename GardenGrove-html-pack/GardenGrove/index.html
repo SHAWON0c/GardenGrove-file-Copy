@@ -20,12 +20,12 @@
   <link rel="stylesheet" href="assets/css/magnific-popup.css">
   <link rel="stylesheet" href="assets/css/ui-range-slider.css">
   <link rel="stylesheet" href="assets/css/nice-select.css">
-  <!-- <link rel="stylesheet" href="assets/css/fontAwesome5Pro.css"> This CDN is paid -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
   <link rel="stylesheet" href="assets/css/flaticon.css">
   <link rel="stylesheet" href="assets/css/default.css">
+  <link rel="stylesheet" href="assets/css/gallery-slide.css">
   <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 
 <body>
@@ -673,63 +673,42 @@
         <div class="services-wrapper pb-10">
           <div class="row">
             <div class="col-lg-4 col-md-6">
-              <div class="single-service single-service-default mb-30">
-                <div class="service-icon">
-                  <img src="assets/img/icon/s-icon1.png" alt="service icon">
-                </div>
-                <div class="single-service-content">
-                  <span class="service-number"></span>
-                  <h4 class="service-title">
-                    <a href="service-details.html">Garden landscaping</a>
-                  </h4>
-                  <p>
-                    The laying out and care of a plot of ground devoted
-                    partially or wholly.
-                  </p>
-                  <a href="service-details.html" class="text-btn"><i class="fas fa-long-arrow-alt-right"></i>
-                    </i>read more<i class="fas fa-long-arrow-alt-right"></i>
-                  </a>
-                </div>
+              <div class="service-card" data-delay="100">
+                <i class="service-icon fas fa-seedling"></i>
+                <div class="service-number">01</div>
+                <h3 class="service-title">Garden Landscaping</h3>
+                <p class="service-description">The laying out and care of a plot of ground devoted partially or
+                  wholly
+                  to the growing of plants.</p>
+                <a href="service-details.html" class="read-more-btn">
+                  Read More <i class="fas fa-arrow-right"></i>
+                </a>
               </div>
             </div>
             <div class="col-lg-4 col-md-6">
-              <div class="single-service single-service-default mb-30">
-                <div class="service-icon">
-                  <img src="assets/img/icon/s-icon2.png" alt="service icon">
-                </div>
-                <div class="single-service-content">
-                  <span class="service-number"></span>
-                  <h4 class="service-title">
-                    <a href="service-details.html">soil making & carbo</a>
-                  </h4>
-                  <p>
-                    The laying out and care of a plot of ground devoted
-                    partially or wholly.
-                  </p>
-                  <a href="service-details.html" class="text-btn"><i class="fas fa-long-arrow-alt-right"></i>
-                    </i>read more<i class="fas fa-long-arrow-alt-right"></i>
-                  </a>
-                </div>
+              <div class="service-card" data-delay="200">
+                <i class="service-icon fas fa-mountain"></i>
+                <div class="service-number">02</div>
+                <h3 class="service-title">Soil Making & Carbo</h3>
+                <p class="service-description">The laying out and care of a plot of ground devoted partially or
+                  wholly
+                  to the growing of plants.</p>
+                <a href="service-details.html" class="read-more-btn">
+                  Read More <i class="fas fa-arrow-right"></i>
+                </a>
               </div>
             </div>
             <div class="col-lg-4 col-md-6">
-              <div class="single-service single-service-default mb-30">
-                <div class="service-icon">
-                  <img src="assets/img/icon/s-icon3.png" alt="service icon">
-                </div>
-                <div class="single-service-content">
-                  <span class="service-number"></span>
-                  <h4 class="service-title">
-                    <a href="service-details.html">planting plants</a>
-                  </h4>
-                  <p>
-                    The laying out and care of a plot of ground devoted
-                    partially or wholly.
-                  </p>
-                  <a href="service-details.html" class="text-btn"><i class="fas fa-long-arrow-alt-right"></i>
-                    </i>read more<i class="fas fa-long-arrow-alt-right"></i>
-                  </a>
-                </div>
+              <div class="service-card" data-delay="300">
+                <i class="service-icon fas fa-leaf"></i>
+                <div class="service-number">03</div>
+                <h3 class="service-title">Planting Plants</h3>
+                <p class="service-description">The laying out and care of a plot of ground devoted partially or
+                  wholly
+                  to the growing of plants.</p>
+                <a href="service-details.html" class="read-more-btn">
+                  Read More <i class="fas fa-arrow-right"></i>
+                </a>
               </div>
             </div>
           </div>
@@ -761,117 +740,160 @@
             </div>
           </div>
         </div>
-        <div class="portfolio-wrapper portfolio-slide-wrapper slider-drag mb-30 wow fadeInUp" data-wow-delay=".3s">
-          <div class="swiper-container portfolio-active-style-2">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="portfolio-single portfolio-hover-style style-2">
-                  <div class="portfolio-thumb">
-                    <a href="portfolio-details.html"><img src="assets/images/portfolio.jpg" alt="img not found"></a>
-                    <div class="portfolio-content">
-                      <a href="portfolio-details.html" class="portfolio-hover-bg"></a>
-                      <div class="portfolio-inner">
-                        <div class="portfolio-inner-text">
-                          <span class="portfolio-tag">gardening</span>
-                          <h4 class="portfolio-title">
-                            <a href="portfolio-details.html">lawn and garden maintenance</a>
-                          </h4>
-                        </div>
-                        <a href="assets/images/portfolio.jpg" class="icon-btn image-popups"><i
-                            class="fas fa-eye"></i></a>
+        <section class="garden-gallery-section">
+          <div class="container-fluid">
+            <!-- Title area removed as requested -->
+            <div class="garden-gallery-slider">
+              <div class="swiper garden-swiper">
+                <div class="swiper-wrapper">
+                  <!-- Slide 1 -->
+                  <div class="swiper-slide">
+                    <div class="garden-gallery-card">
+                      <div class="garden-gallery-card-img-wrapper">
+                        <img src="assets/images/about-1.png" alt="Gardening Team"
+                          onerror="this.src='/placeholder.svg?height=450&width=350'">
+                      </div>
+                      <div class="garden-view-icon" data-img="images/gardening-team.jpg">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                          <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                      </div>
+                      <div class="garden-card-content">
+                        <h3 class="garden-card-title">Professional Team</h3>
+                        <p class="garden-card-description">Our expert gardeners provide top-quality service</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Slide 2 -->
+                  <div class="swiper-slide">
+                    <div class="garden-gallery-card">
+                      <div class="garden-gallery-card-img-wrapper">
+                        <img src="assets/images/about1.webp" alt="Plant Care"
+                          onerror="this.src='/placeholder.svg?height=450&width=350'">
+                      </div>
+                      <div class="garden-view-icon" data-img="images/plant-care.jpg">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                          <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                      </div>
+                      <div class="garden-card-content">
+                        <h3 class="garden-card-title">Plant Care</h3>
+                        <p class="garden-card-description">Specialized care for all types of plants</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Slide 3 -->
+                  <div class="swiper-slide">
+                    <div class="garden-gallery-card">
+                      <div class="garden-gallery-card-img-wrapper">
+                        <img src="assets/images/about2.webp" alt="Garden Watering"
+                          onerror="this.src='/placeholder.svg?height=450&width=350'">
+                      </div>
+                      <div class="garden-view-icon" data-img="images/garden-watering.jpg">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                          <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                      </div>
+                      <div class="garden-card-content">
+                        <h3 class="garden-card-title">Garden Watering</h3>
+                        <p class="garden-card-description">Proper irrigation systems for healthy growth</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Slide 4 -->
+                  <div class="swiper-slide">
+                    <div class="garden-gallery-card">
+                      <div class="garden-gallery-card-img-wrapper">
+                        <img src="assets/images/about3.webp" alt="Plant Maintenance"
+                          onerror="this.src='/placeholder.svg?height=450&width=350'">
+                      </div>
+                      <div class="garden-view-icon" data-img="images/plant-maintenance.jpg">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                          <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                      </div>
+                      <div class="garden-card-content">
+                        <h3 class="garden-card-title">Plant Maintenance</h3>
+                        <p class="garden-card-description">Regular care to keep your garden thriving</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Slide 5 -->
+                  <div class="swiper-slide">
+                    <div class="garden-gallery-card">
+                      <div class="garden-gallery-card-img-wrapper">
+                        <img src="assets/images/hero1.webp" alt="Garden Design"
+                          onerror="this.src='/placeholder.svg?height=450&width=350'">
+                      </div>
+                      <div class="garden-view-icon" data-img="images/garden-design.jpg">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                          <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                      </div>
+                      <div class="garden-card-content">
+                        <h3 class="garden-card-title">Garden Design</h3>
+                        <p class="garden-card-description">Creative landscape solutions for any space</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Slide 6 -->
+                  <div class="swiper-slide">
+                    <div class="garden-gallery-card">
+                      <div class="garden-gallery-card-img-wrapper">
+                        <img src="assets/images/hero2.webp" alt="Landscaping"
+                          onerror="this.src='/placeholder.svg?height=450&width=350'">
+                      </div>
+                      <div class="garden-view-icon" data-img="images/landscaping.jpg">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                          <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                      </div>
+                      <div class="garden-card-content">
+                        <h3 class="garden-card-title">Landscaping</h3>
+                        <p class="garden-card-description">Transform your outdoor space beautifully</p>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="portfolio-single portfolio-hover-style style-2">
-                  <div class="portfolio-thumb">
-                    <a href="portfolio-details.html"><img src="assets/images/portfolio.jpg" alt="img not found"></a>
-                    <div class="portfolio-content">
-                      <a href="portfolio-details.html" class="portfolio-hover-bg"></a>
-                      <div class="portfolio-inner">
-                        <div class="portfolio-inner-text">
-                          <span class="portfolio-tag">gardening</span>
-                          <h4 class="portfolio-title">
-                            <a href="portfolio-details.html">Tree-Trimming & Removal</a>
-                          </h4>
-                        </div>
-                        <a href="assets/images/portfolio.jpg" class="icon-btn image-popups"><i
-                            class="fas fa-eye"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="portfolio-single portfolio-hover-style style-2">
-                  <div class="portfolio-thumb">
-                    <a href="portfolio-details.html"><img src="assets/images/portfolio.jpg" alt="img not found"></a>
-                    <div class="portfolio-content">
-                      <a href="portfolio-details.html" class="portfolio-hover-bg"></a>
-                      <div class="portfolio-inner">
-                        <div class="portfolio-inner-text">
-                          <span class="portfolio-tag">gardening</span>
-                          <h4 class="portfolio-title">
-                            <a href="portfolio-details.html">Junk Removal</a>
-                          </h4>
-                        </div>
-                        <a href="assets/images/portfolio.jpg" class="icon-btn image-popups"><i
-                            class="fas fa-eye"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="portfolio-single portfolio-hover-style style-2">
-                  <div class="portfolio-thumb">
-                    <a href="portfolio-details.html"><img src="assets/images/portfolio.jpg" alt="img not found"></a>
-                    <div class="portfolio-content">
-                      <a href="portfolio-details.html" class="portfolio-hover-bg"></a>
-                      <div class="portfolio-inner">
-                        <div class="portfolio-inner-text">
-                          <span class="portfolio-tag">gardening</span>
-                          <h4 class="portfolio-title">
-                            <a href="portfolio-details.html">watering plants</a>
-                          </h4>
-                        </div>
-                        <a href="assets/images/portfolio.jpg" class="icon-btn image-popups"><i
-                            class="fas fa-eye"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="portfolio-single portfolio-hover-style style-2">
-                  <div class="portfolio-thumb">
-                    <a href="portfolio-details.html"><img src="assets/images/portfolio.jpg" alt="img not found"></a>
-                    <div class="portfolio-content">
-                      <a href="portfolio-details.html" class="portfolio-hover-bg"></a>
-                      <div class="portfolio-inner">
-                        <div class="portfolio-inner-text">
-                          <span class="portfolio-tag">gardening</span>
-                          <h4 class="portfolio-title">
-                            <a href="portfolio-details.html">Mowing the grass</a>
-                          </h4>
-                        </div>
-                        <a href="assets/images/portfolio.jpg" class="icon-btn image-popups"><i
-                            class="fas fa-eye"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+
+                <!-- Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
               </div>
             </div>
-            <div class="portfolio-style-2-pagination-wrapper mt-50">
-              <div class="portfolio-pagination portfolio-style-2-pagination"></div>
-            </div>
+          </div>
+        </section>
+      </div>
+
+
+      <div class="garden-lightbox" id="gardenLightbox">
+        <div class="garden-lightbox-content">
+          <img src="/placeholder.svg" alt="Lightbox Image" class="garden-lightbox-img" id="gardenLightboxImg">
+          <div class="garden-lightbox-close" id="gardenLightboxClose">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
           </div>
         </div>
       </div>
     </section>
+    <!-- Lightbox -->
+
     <!-- portfolio area end  -->
 
     <!-- pricing-cta area start  -->
@@ -1272,141 +1294,81 @@
   </main>
 
   <!-- footer area start  -->
-  <footer data-background="" class="footer2-bg">
-    <section class="footer-area footer-area2 footer-area2-bg pt-95 pb-55">
-      <div class="container">
-        <div class="footer2-inner footer-plant-shape">
-          <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="footer-widget footer2-widget footer2-widget1 mb-40">
-                <div class="footer-widget-title">
-                  <h4>main pages</h4>
-                </div>
-                <ul>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">about</a></li>
-                  <li><a href="#">services</a></li>
-                  <li><a href="#">news</a></li>
-                  <li><a href="#">pricing</a></li>
-                </ul>
-                <ul>
-                  <li><a href="#">refund policy</a></li>
-                  <li><a href="#">Get in touch</a></li>
-                  <li><a href="#">Emergency</a></li>
-                  <li><a href="#">get a quote</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="footer-widget footer2-widget footer2-widget2 mb-40">
-                <div class="footer-widget-title">
-                  <h4>our services</h4>
-                </div>
-                <ul>
-                  <li><a href="#">Lawn Moving</a></li>
-                  <li><a href="#">Hedge Cutting</a></li>
-                  <li><a href="#">Flower Planting</a></li>
-                  <li><a href="#">Garden Remodeling</a></li>
-                  <li><a href="#">Garden Restoration</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="footer-widget footer2-widget footer2-widget3 mb-40">
-                <div class="footer-widget-title">
-                  <h4>get in touch</h4>
-                </div>
-                <div class="footer-contact">
-                  <ul>
-                    <li>
-                      <div class="single-contact">
-                        <div class="contact-icon">
-                          <i class="fas fa-phone"></i>
-                        </div>
-                        <p><a href="tel:1-800-700-600">1-800-700-600</a></p>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="single-contact">
-                        <div class="contact-icon">
-                          <i class="fas fa-envelope-open"></i>
-                        </div>
-                        <p>
-                          <a href="mailto:info@bdevs-email.com">info@bdevs-email.com</a>
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="single-contact">
-                        <div class="contact-icon">
-                          <i class="fas fa-map-marked-alt"></i>
-                        </div>
-                        <p>
-                          <a href="#">60 East 65th Street, New York City, NY 10065</a>
-                        </p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="footer-social">
-                  <span>Connect:</span>
-                  <div class="social-links">
-                    <ul>
-                      <li>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                      </li>
-                      <li>
-                        <a href="#"><i class="fab fa-behance"></i></a>
-                      </li>
-                      <li>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                      </li>
-                      <li>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="footer-widget footer2-widget footer2-widget4 mb-40">
-                <div class="footer-widget-title">
-                  <h4>instagram feeds</h4>
-                </div>
-                <div class="instagam-shots">
-                  <a href="#"><img src="assets/images/about3.webp" alt="instagram-img"></a>
-                  <a href="#"><img src="assets/images/about3.webp" alt="instagram-img"></a>
-                  <a href="#"><img src="assets/images/about3.webp" alt="instagram-img"></a>
-                  <a href="#"><img src="assets/images/about3.webp" alt="instagram-img"></a>
-                  <a href="#"><img src="assets/images/about3.webp" alt="instagram-img"></a>
-                  <a href="#"><img src="assets/images/about3.webp" alt="instagram-img"></a>
-                </div>
-              </div>
+  <footer class="footer-trail">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h5>ABOUT US</h5>
+          <p>In that team is an online space between people to clean can be encountered a type of this from or
+            contact while garden is an outdoor area consisting one or more types of plants.</p>
+          <div class="social-icons mt-3">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <div class="mt-3">
+            <i class="fas fa-phone me-2"></i> 985 659 631 68
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h5>MAIN PAGES</h5>
+          <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">SERVICES</a></li>
+            <li><a href="#">NEWS</a></li>
+            <li><a href="#">PRICING</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h5>OUR SERVICES</h5>
+          <ul>
+            <li><a href="#">LAWN MOWING</a></li>
+            <li><a href="#">HEDGE CUTTING</a></li>
+            <li><a href="#">FLOWER PLANTING</a></li>
+            <li><a href="#">GARDEN REMODELING</a></li>
+            <li><a href="#">GARDEN RESTORATION</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h5>GET IN TOUCH</h5>
+          <ul>
+            <li><i class="fas fa-phone me-2"></i> 1-800-700-600</li>
+            <li><i class="fas fa-envelope me-2"></i> INFO@YOUREMAIL.COM</li>
+            <li><i class="fas fa-map-marker-alt me-2"></i> 69 EAST 45TH STREET, NEW YORK CITY, NY 10065</li>
+          </ul>
+          <div class="mt-3">
+            <strong>CONNECT:</strong>
+            <div class="social-icons mt-2">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
             </div>
           </div>
         </div>
       </div>
-    </section>
 
-    <div class="copyright-area copyright2-area">
-      <div class="container">
-        <div class="copyright2-inner">
-          <div class="row align-items-center">
-            <div class="col-lg-6 col-md-6">
-              <div class="footer-links">
-                <a href="#">environment soluton</a>
-                <a href="#">faq</a>
+      <hr class="my-4" style="border-color: #4a7c59;">
+
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <div class="d-flex align-items-center">
+            <div class="logo me-3">
+              <div
+                style="width: 40px; height: 40px; background: var(--accent-green); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-leaf" style="color: white;"></i>
               </div>
             </div>
-            <div class="col-lg-6 col-md-6">
-              <div class="copyright-text copyright2-text">
-                Copyright & Design By
-                <a href="https://themeforest.net/user/bdevs/portfolio">@TF</a>
-                - 2025
-              </div>
-            </div>
+            <h4 style="color: var(--accent-green); margin: 0;">Gardomia</h4>
           </div>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p class="mb-0">COPYRIGHT & DESIGN BY <strong>GARDOMIA</strong> - 2022</p>
         </div>
       </div>
     </div>
@@ -1453,7 +1415,12 @@
   <script src="assets/js/beforeafter.jquery-1.0.0.js"></script>
   <script src="assets/js/isotope.pkgd.min.js"></script>
   <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/js/service-card.js"></script>
+  <script src="assets/js/garden-swiper.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+
+  </script>
 </body>
 
 </html>
