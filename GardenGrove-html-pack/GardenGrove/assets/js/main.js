@@ -468,7 +468,6 @@
     tp_color_settings();
   }
 
-  ////////////////////////////////////////////////////
   // slider__active Slider Js
 
   if (jQuery(".slider__active").length > 0) {

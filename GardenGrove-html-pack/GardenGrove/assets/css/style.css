@@ -3759,7 +3759,7 @@ div.mean-container a.meanmenu-reveal {
 }
 
 .banner-area2 {
-  margin-top: -80px;
+  margin-top: -96px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px),
   only screen and (min-width: 576px) and (max-width: 767px),
@@ -4172,13 +4172,349 @@ div.mean-container a.meanmenu-reveal {
   opacity: 1;
 }
 
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #0a3c2e;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-in-out;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-content {
+  background: #fff;
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+  max-width: 320px;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  margin-top: -30px;
+}
+
+.timeline-year {
+  font-size: 6rem;
+  font-weight: 900;
+  opacity: 0.05;
+  position: absolute;
+  top: -10px;
+  z-index: 0;
+}
+
+.timeline-image {
+  flex: 1;
+  max-width: 320px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 0;
+}
+
+.timeline-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.timeline-left .timeline-content {
+  margin-left: auto;
+}
+
+.timeline-right .timeline-content {
+  margin-right: auto;
+}
+
+.timeline-left {
+  flex-direction: row-reverse;
+}
+
+.timeline-left .timeline-year {
+  right: calc(50% + 10px);
+}
+
+.timeline-right .timeline-year {
+  left: calc(50% + 10px);
+}
+
+.timeline-indicator {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  color: #0a3c2e;
+  font-size: 1.25rem;
+  text-align: center;
+  line-height: 36px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+  top: 45%;
+  z-index: 2;
+}
+
+.timeline-left .timeline-indicator {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-right .timeline-indicator {
+  right: 50%;
+  transform: translateX(50%);
+}
+
+@media (max-width: 1399px) {
+  .timeline-left .timeline-year {
+    right: calc(65%);
+  }
+
+  .timeline-right .timeline-year {
+    left: calc(65%);
+  }
+}
+
+@media (max-width: 1199px) {
+  .timeline-left .timeline-year {
+    right: calc(75%);
+  }
+
+  .timeline-right .timeline-year {
+    left: calc(75%);
+  }
+}
+
+@media (max-width: 991px) {
+  .timeline-left .timeline-year {
+    top: 65%;
+  }
+
+  .timeline-right .timeline-year {
+    top: 65%;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .timeline-left .timeline-content,
+  .timeline-right .timeline-content {
+    margin: -20px auto 0 auto;
+  }
+
+  .timeline-year {
+    position: relative;
+    font-size: 4rem;
+    text-align: center;
+    left: 0;
+    margin-bottom: 0.25rem;
+  }
+
+  .timeline-indicator {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin-bottom: 1rem;
+    top: auto;
+  }
+
+  .timeline-left .timeline-year {
+    left: -22%;
+    top: -20px;
+  }
+
+  .timeline-right .timeline-year {
+    left: 22%;
+    top: -20px;
+  }
+}
+
+@media (max-width: 425px) {
+  .timeline-year {
+    font-size: 3.5rem;
+  }
+
+  .timeline-content,
+  .timeline-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .timeline-left .timeline-year {
+    left: -25%;
+    top: -20px;
+  }
+
+  .timeline-right .timeline-year {
+    left: 25%;
+    top: -20px;
+  }
+}
+
+/* Hero Section */
+.hero-section1 {
+  background: linear-gradient(rgba(45, 90, 61, 0.8), rgba(45, 90, 61, 0.8)),
+    url("https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80");
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  color: white;
+  position: relative;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--bg-light);
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  color: #e7e7e7;
+}
+
+.breadcrumb-custom {
+  background: transparent;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.breadcrumb-custom .breadcrumb-item a {
+  color: white !important;
+  text-decoration: none;
+}
+
+.breadcrumb-custom .breadcrumb-item.active {
+  color: var(--accent-green);
+}
+
+/* footer-trail */
+.footer-trail {
+  background: #1a3a2a;
+  color: white;
+  padding: 60px 0 30px;
+}
+
+.footer-trail h5 {
+  color: var(--accent-green);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-trail ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-trail ul li {
+  margin-bottom: 10px;
+}
+
+.footer-trail ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-trail ul li a:hover {
+  color: var(--accent-green);
+}
+
+.social-icons a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: var(--primary-green);
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: var(--accent-green);
+  transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .sidebar {
+    margin-top: 40px;
+  }
+
+  .work-step {
+    margin-bottom: 40px;
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Loading Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .about-thumb {
   max-width: 510px;
   margin-inline-start: 70px;
   position: relative;
-  border-radius: 10px;
-  padding-bottom: 30px;
+  overflow: hidden;
+  object-fit: cover;
 }
+
 @media only screen and (min-width: 768px) and (max-width: 991px),
   only screen and (min-width: 576px) and (max-width: 767px),
   (max-width: 575px) {
@@ -5580,7 +5916,7 @@ div.mean-container a.meanmenu-reveal {
 
 .hero-subtitle {
   font-size: 1.2rem;
-  color: #666;
+  color: #e7e7e7;
   margin-bottom: 1rem;
   font-weight: 600;
 }
