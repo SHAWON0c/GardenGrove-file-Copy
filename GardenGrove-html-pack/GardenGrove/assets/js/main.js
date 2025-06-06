@@ -50,8 +50,6 @@
     meanExpand: ['<i class="fal fa-plus"></i>'],
   });
 
-
-
   // sidebar - cart
   $(".close-sidebar,.offcanvas-overlay").on("click", function () {
     $(".sidebar-cart").removeClass("cart-open");
@@ -470,7 +468,6 @@
     tp_color_settings();
   }
 
-  ////////////////////////////////////////////////////
   // slider__active Slider Js
 
   if (jQuery(".slider__active").length > 0) {
@@ -785,10 +782,6 @@
     });
   }
 
-
-
-
-
   // drop-btn
   $(".drop-btn").on("click", function () {
     $(this).siblings("").toggleClass("content-hidden");
@@ -932,7 +925,7 @@
       // direction: 'vertical',
       loop: true,
       observer: true,
-    observeParents: true,
+      observeParents: true,
       rtl: rtl_setting,
       autoplay: {
         delay: 3000,
@@ -962,7 +955,7 @@
       // direction: 'vertical',
       loop: true,
       observer: true,
-    observeParents: true,
+      observeParents: true,
       rtl: rtl_setting,
       autoplay: {
         delay: 3000,
@@ -1194,7 +1187,7 @@
       // direction: 'vertical',
       loop: true,
       observer: true,
-    observeParents: true,
+      observeParents: true,
       rtl: rtl_setting,
       autoplay: {
         delay: 3000,
@@ -1273,3 +1266,203 @@
     });
   });
 })(jQuery);
+
+// Initialize WOW.js
+new WOW().init();
+
+// Counter Animation
+function animateCounter(element) {
+  const target = parseInt(element.getAttribute("data-count"));
+  const increment = target / 100;
+  let current = 0;
+
+  const timer = setInterval(() => {
+    current += increment;
+    if (current >= target) {
+      element.textContent =
+        target +
+        (element.parentNode
+          .querySelector(".stats-label")
+          .textContent.includes("Customers")
+          ? "K"
+          : element.parentNode
+              .querySelector(".stats-label")
+              .textContent.includes("Satisfaction")
+          ? "%"
+          : "+");
+      clearInterval(timer);
+    } else {
+      element.textContent =
+        Math.floor(current) +
+        (element.parentNode
+          .querySelector(".stats-label")
+          .textContent.includes("Customers")
+          ? "K"
+          : element.parentNode
+              .querySelector(".stats-label")
+              .textContent.includes("Satisfaction")
+          ? "%"
+          : "+");
+    }
+  }, 20);
+}
+
+// Intersection Observer for counter animation
+const counterObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const counter = entry.target.querySelector(".counter");
+        if (counter && !counter.classList.contains("animated")) {
+          counter.classList.add("animated");
+          setTimeout(() => {
+            animateCounter(counter);
+          }, 500);
+        }
+      }
+    });
+  },
+  { threshold: 0.5 }
+);
+
+// Observe all stats cards
+document.querySelectorAll(".stats-card").forEach((card) => {
+  counterObserver.observe(card);
+});
+
+// Smooth scrolling for scroll indicator
+document.querySelector(".scroll-indicator").addEventListener("click", () => {
+  window.scrollTo({
+    top: window.innerHeight,
+    behavior: "smooth",
+  });
+});
+
+// Parallax effect for floating elements
+window.addEventListener("scroll", () => {
+  const scrolled = window.pageYOffset;
+  const rate = scrolled * -0.5;
+
+  document.querySelectorAll(".floating-leaf").forEach((leaf, index) => {
+    leaf.style.transform = `translateY(${rate * (index + 1) * 0.2}px) rotate(${
+      scrolled * 0.1
+    }deg)`;
+  });
+});
+
+// Add dynamic hover effects
+document.querySelectorAll(".stats-card").forEach((card) => {
+  card.addEventListener("mouseenter", () => {
+    card.style.transform = "translateY(-5px) scale(1.02) rotateY(5deg)";
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "translateY(0) scale(1) rotateY(0deg)";
+  });
+});
+
+// Add sparkle effect on hover for content card
+const contentCard = document.querySelector(".content-card");
+contentCard.addEventListener("mousemove", (e) => {
+  const rect = contentCard.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  const sparkle = document.createElement("div");
+  sparkle.style.position = "absolute";
+  sparkle.style.left = x + "px";
+  sparkle.style.top = y + "px";
+  sparkle.style.width = "4px";
+  sparkle.style.height = "4px";
+  sparkle.style.background = "var(--primary-green)";
+  sparkle.style.borderRadius = "50%";
+  sparkle.style.pointerEvents = "none";
+  sparkle.style.animation = "sparkle 0.6s ease-out forwards";
+
+  contentCard.appendChild(sparkle);
+
+  setTimeout(() => {
+    sparkle.remove();
+  }, 600);
+});
+
+// Add sparkle keyframes
+const style = document.createElement("style");
+style.textContent = `
+        @keyframes sparkle {
+            0% {
+                transform: scale(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1) rotate(180deg);
+                opacity: 0;
+            }
+        }
+    `;
+document.head.appendChild(style);
+
+// Counter Up Animation
+function animateCounter(element) {
+  const target = parseInt(element.getAttribute("data-target"));
+  const increment = target / 100;
+  let current = 0;
+
+  const timer = setInterval(() => {
+    current += increment;
+    if (current >= target) {
+      current = target;
+      clearInterval(timer);
+    }
+
+    // Format the number based on the target
+    if (target === 95) {
+      element.textContent = Math.floor(current) + "K";
+    } else if (target === 100) {
+      element.textContent = Math.floor(current) + "%";
+    } else {
+      element.textContent = Math.floor(current) + "+";
+    }
+  }, 20);
+}
+
+// Intersection Observer for triggering animations
+const observerOptions = {
+  threshold: 0.5,
+  rootMargin: "0px 0px -50px 0px",
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const counters = entry.target.querySelectorAll(".counter");
+      counters.forEach((counter) => {
+        animateCounter(counter);
+      });
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+// Start observing when DOM is loaded
+document.addEventListener("DOMContentLoaded", () => {
+  const statsContainer = document.querySelector(".stats-container");
+  if (statsContainer) {
+    observer.observe(statsContainer);
+  }
+});
+
+// Add smooth scrolling and additional interactions
+document.addEventListener("DOMContentLoaded", () => {
+  // Add hover effects to stat cards
+  const statCards = document.querySelectorAll(".stat-card");
+  statCards.forEach((card) => {
+    card.addEventListener("mouseenter", () => {
+      card.style.transform = "translateY(-8px) scale(1.02)";
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "translateY(0) scale(1)";
+    });
+  });
+});

@@ -1,0 +1,950 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title>Gardomia - Landscape and Gardening HTML Template + RTL</title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- Place favicon.ico in the root directory -->
+   <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+   <!-- CSS here -->
+   <link rel="stylesheet" href="assets/css/preloader.css">
+   <link rel="stylesheet" href="assets/css/bootstrap.css">
+   <link rel="stylesheet" href="assets/css/meanmenu.css">
+   <link rel="stylesheet" href="assets/css/animate.min.css">
+   <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+   <link rel="stylesheet" href="assets/css/swiper-bundle.css">
+   <link rel="stylesheet" href="assets/css/backToTop.css">
+   <link rel="stylesheet" href="assets/css/magnific-popup.css">
+   <link rel="stylesheet" href="assets/css/ui-range-slider.css">
+   <link rel="stylesheet" href="assets/css/nice-select.css">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+   <link rel="stylesheet" href="assets/css/flaticon.css">
+   <link rel="stylesheet" href="assets/css/default.css">
+   <link rel="stylesheet" href="assets/css/style.css">
+
+   <!-- Bootstrap CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Font Awesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   <!-- Google Fonts -->
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+   <style>
+      :root {
+         --primary-green: #2d5a3d;
+         --light-green: #4a7c59;
+         --accent-green: #6faa7a;
+         --text-dark: #333;
+         --text-light: #666;
+         --bg-light: #f8f9fa;
+      }
+
+      * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+      }
+
+      body {
+         font-family: 'Poppins', sans-serif;
+         line-height: 1.6;
+         color: var(--text-dark);
+      }
+
+      /* Hero Section */
+      .hero-section1 {
+         background: linear-gradient(rgba(45, 90, 61, 0.8), rgba(45, 90, 61, 0.8)), url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+         background-size: cover;
+         background-position: center;
+         height: 400px;
+         display: flex;
+         align-items: center;
+         color: white;
+         position: relative;
+      }
+
+      .hero-content h1 {
+         font-size: 3.5rem;
+         font-weight: 700;
+         margin-bottom: 1rem;
+         text-transform: uppercase;
+         letter-spacing: 2px;
+      }
+
+      .hero-subtitle {
+         font-size: 1.1rem;
+         margin-bottom: 2rem;
+         opacity: 0.9;
+      }
+
+      .breadcrumb-custom {
+         background: transparent;
+         padding: 0;
+         margin-bottom: 2rem;
+      }
+
+      .breadcrumb-custom .breadcrumb-item a {
+         color: white;
+         text-decoration: none;
+      }
+
+      .breadcrumb-custom .breadcrumb-item.active {
+         color: var(--accent-green);
+      }
+
+      /* Main Content */
+      .main-content {
+         padding: 80px 0;
+      }
+
+      .service-image {
+         border-radius: 15px;
+         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+         transition: transform 0.3s ease;
+      }
+
+      .service-image:hover {
+         transform: translateY(-5px);
+      }
+
+      /* Sidebar */
+      .sidebar {
+         background: var(--bg-light);
+         padding: 30px;
+         border-radius: 15px;
+         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .sidebar h4 {
+         color: var(--primary-green);
+         font-weight: 600;
+         margin-bottom: 20px;
+         text-transform: uppercase;
+         letter-spacing: 1px;
+      }
+
+      .service-list {
+         list-style: none;
+         padding: 0;
+      }
+
+      .service-list li {
+         padding: 12px 0;
+         border-bottom: 1px solid #e0e0e0;
+         transition: all 0.3s ease;
+      }
+
+      .service-list li:hover {
+         padding-left: 10px;
+         color: var(--primary-green);
+      }
+
+      .service-list li:last-child {
+         border-bottom: none;
+      }
+
+      .download-btn {
+         background: var(--primary-green);
+         color: white;
+         border: none;
+         padding: 12px 20px;
+         border-radius: 8px;
+         width: 100%;
+         margin-bottom: 10px;
+         transition: all 0.3s ease;
+         text-align: left;
+      }
+
+      .download-btn:hover {
+         background: var(--light-green);
+         transform: translateY(-2px);
+      }
+
+      /* Service Overview */
+      .service-overview {
+         margin: 60px 0;
+      }
+
+      .service-overview h2 {
+         color: var(--primary-green);
+         font-weight: 600;
+         margin-bottom: 30px;
+         text-transform: uppercase;
+         letter-spacing: 1px;
+      }
+
+      /* How We Work */
+      .how-we-work {
+         background: var(--bg-light);
+         padding: 80px 0;
+      }
+
+      .work-step {
+         text-align: center;
+         padding: 30px 20px;
+         transition: transform 0.3s ease;
+      }
+
+      .work-step:hover {
+         transform: translateY(-10px);
+      }
+
+      .work-icon {
+         width: 80px;
+         height: 80px;
+         background: var(--primary-green);
+         border-radius: 50%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         margin: 0 auto 20px;
+         font-size: 2rem;
+         color: white;
+         position: relative;
+      }
+
+      .work-icon::after {
+         content: '';
+         position: absolute;
+         width: 100%;
+         height: 100%;
+         border: 3px solid var(--accent-green);
+         border-radius: 50%;
+         animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+         0% {
+            transform: scale(1);
+            opacity: 1;
+         }
+
+         100% {
+            transform: scale(1.2);
+            opacity: 0;
+         }
+      }
+
+      .work-step h4 {
+         color: var(--primary-green);
+         font-weight: 600;
+         margin-bottom: 15px;
+         text-transform: uppercase;
+      }
+
+      /* Gallery Images - Fixed Size and Responsive */
+      .gallery-section {
+         margin: 80px 0;
+      }
+
+      .gallery-container {
+         position: relative;
+         width: 100%;
+         height: 300px;
+         /* Fixed height for consistency */
+         overflow: hidden;
+         border-radius: 15px;
+         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+         margin-bottom: 30px;
+         transition: transform 0.3s ease;
+      }
+
+      .gallery-container:hover {
+         transform: scale(1.05);
+      }
+
+      .gallery-image {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         /* This ensures images maintain aspect ratio while filling container */
+         object-position: center;
+         /* Centers the image within the container */
+         transition: transform 0.3s ease;
+      }
+
+      .gallery-container:hover .gallery-image {
+         transform: scale(1.1);
+      }
+
+      /* Responsive adjustments for gallery */
+      @media (max-width: 768px) {
+         .gallery-container {
+            height: 250px;
+            /* Slightly smaller on mobile */
+         }
+      }
+
+      @media (max-width: 576px) {
+         .gallery-container {
+            height: 200px;
+            /* Even smaller on very small screens */
+         }
+      }
+
+      /* Core Features */
+      .core-features {
+         background: var(--primary-green);
+         padding: 80px 0;
+         color: white;
+      }
+
+      .core-features h2 {
+         text-align: center;
+         margin-bottom: 50px;
+         text-transform: uppercase;
+         letter-spacing: 2px;
+      }
+
+      .feature-box {
+         background: rgba(255, 255, 255, 0.1);
+         padding: 25px;
+         border-radius: 10px;
+         text-align: center;
+         margin-bottom: 20px;
+         transition: all 0.3s ease;
+         border: 2px solid transparent;
+      }
+
+      .feature-box:hover {
+         background: rgba(255, 255, 255, 0.2);
+         border-color: var(--accent-green);
+         transform: translateY(-5px);
+      }
+
+      /* footer-trail */
+      .footer-trail {
+         background: #1a3a2a;
+         color: white;
+         padding: 60px 0 30px;
+      }
+
+      .footer-trail h5 {
+         color: var(--accent-green);
+         margin-bottom: 20px;
+         text-transform: uppercase;
+         letter-spacing: 1px;
+      }
+
+      .footer-trail ul {
+         list-style: none;
+         padding: 0;
+      }
+
+      .footer-trail ul li {
+         margin-bottom: 10px;
+      }
+
+      .footer-trail ul li a {
+         color: #ccc;
+         text-decoration: none;
+         transition: color 0.3s ease;
+      }
+
+      .footer-trail ul li a:hover {
+         color: var(--accent-green);
+      }
+
+      .social-icons a {
+         display: inline-block;
+         width: 40px;
+         height: 40px;
+         background: var(--primary-green);
+         color: white;
+         text-align: center;
+         line-height: 40px;
+         border-radius: 50%;
+         margin-right: 10px;
+         transition: all 0.3s ease;
+      }
+
+      .social-icons a:hover {
+         background: var(--accent-green);
+         transform: translateY(-3px);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+         .hero-content h1 {
+            font-size: 2.5rem;
+         }
+
+         .sidebar {
+            margin-top: 40px;
+         }
+
+         .work-step {
+            margin-bottom: 40px;
+         }
+      }
+
+      /* Smooth Scrolling */
+      html {
+         scroll-behavior: smooth;
+      }
+
+      /* Loading Animation */
+      .fade-in {
+         opacity: 0;
+         transform: translateY(30px);
+         transition: all 0.6s ease;
+      }
+
+      .fade-in.visible {
+         opacity: 1;
+         transform: translateY(0);
+      }
+   </style>
+</head>
+
+<body>
+   <div class="mouseCursor cursor-outer"></div>
+   <div class="mouseCursor cursor-inner"><span>Drag</span></div>
+
+   <!-- header area start  -->
+   <header class="header1">
+      <div class="header-top-area d-none d-lg-block">
+         <div class="container container-big">
+            <div class="header-top-inner">
+               <div class="header-top-left">
+                  <div class="meta-items">
+                     <div class="meta-item">
+                        <div class="meta-item-icon">
+                           <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="meta-item-text">
+                           <p><a href="tel:78989700098">789 897 000 98</a></p>
+                        </div>
+                     </div>
+                     <div class="meta-item">
+                        <div class="meta-item-icon">
+                           <i class="fas fa-envelope-open"></i>
+                        </div>
+                        <div class="meta-item-text">
+                           <p><a href="mailto:info@gardomia.com">info@gardomia.com</a></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="header-top-right">
+                  <div class="meta-items">
+                     <div class="meta-item">
+                        <div class="meta-item-icon">
+                           <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="meta-item-text">
+                           <p>Mon - Fri: 9:00 - 19:00<span class="d-none d-xl-inline-block">/ Closed on
+                                 <strong>Weekends</strong></span>
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="header-top-social">
+                     <div class="social-links">
+                        <ul>
+                           <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                           <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                           <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                           <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="header-sticky" class="header-main header-main1 ">
+         <div class="container container-big">
+            <div class="row align-items-center">
+               <div class="col-xl-12 col-lg-12">
+                  <div class="header-main-content-wrapper">
+                     <div class="header-main-left header-main-left-header1">
+                        <div class="header-logo header1-logo">
+                           <a href="index.html" class="logo-bl"><img src="assets/img/logo/logo-w-bg.png"
+                                 alt="logo-img"></a>
+                        </div>
+                        <div class="main-menu main-menu1 d-none d-xl-block">
+                           <nav id="mobile-menu">
+                              <ul>
+                                 <li class="menu-item-has-children"><a href="index.html">Home</a>
+                                    <ul class="sub-menu">
+                                       <li><a href="index.html">Home Style 01</a></li>
+                                       <li><a href="index-2.html">Home Style 02</a></li>
+                                       <li><a href="index-3.html">Home Style 03</a></li>
+                                    </ul>
+                                 </li>
+                                 <li><a href="about.html">About</a>
+                                 </li>
+                                 <li class="menu-item-has-children"><a href="services.html">Services</a>
+                                    <ul class="sub-menu">
+                                       <li><a href="services.html">Services</a></li>
+                                       <li><a href="service-details.html">Service Details</a></li>
+                                    </ul>
+                                 </li>
+                                 <li class="menu-item-has-children"><a href="#">Pages</a>
+                                    <ul class="sub-menu">
+                                       <li class="menu-item-has-children"><a href="portfolio.html">Portfolio</a>
+                                          <ul class="sub-menu">
+                                             <li><a href="portfolio.html">Portfolio</a></li>
+                                             <li><a href="portfolio-details.html">Portfolio Details</a></li>
+                                          </ul>
+                                       </li>
+                                       <li class="menu-item-has-children"><a href="team.html">Team</a>
+                                          <ul class="sub-menu">
+                                             <li><a href="team.html">Team</a></li>
+                                             <li><a href="team-details.html">Team Details</a></li>
+                                          </ul>
+                                       </li>
+                                 </li>
+
+                                 <li><a href="faq.html">FAQ</a></li>
+                              </ul>
+                              </li>
+                              <li class="menu-item-has-children"><a href="blog.html">Blog</a>
+                                 <ul class="sub-menu">
+                                    <li><a href="blog.html">Blog</a></li>
+                                    <li><a href="blog-details.html">Blog Details</a></li>
+                                 </ul>
+                              </li>
+                              <li><a href="contact.html">Contact</a></li>
+                              </ul>
+                           </nav>
+                        </div>
+                     </div>
+                     <div class="header-main-right header-main-right-header1">
+                        <a href="contact.html" class="border-btn-rounded d-none d-lg-inline-flex"><i
+                              class="fal fa-farm"></i><span>Get a
+                              Quote</span></a>
+                        <div class="menu-bar d-xl-none">
+                           <a class="side-toggle" href="javascript:void(0)">
+                              <div class="bar-icon">
+                                 <span></span>
+                                 <span></span>
+                                 <span></span>
+                              </div>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+   </header>
+   <!-- header area end -->
+
+   <!-- Add your site or application content here -->
+   <main>
+
+   </main>
+   <!-- Hero Section -->
+   <section class="hero-section1">
+      <div class="container">
+         <div class="hero-content">
+            <nav aria-label="breadcrumb">
+               <ol class="breadcrumb breadcrumb-custom">
+                  <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i> HOME</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">SERVICE DETAILS</li>
+               </ol>
+            </nav>
+            <p class="hero-subtitle">PROVIDES HASSLE-FREE BACKYARD TRANSFORMATION</p>
+            <h1>SOIL PREPARING</h1>
+         </div>
+      </div>
+   </section>
+
+   <!-- Main Content -->
+   <section class="main-content">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8">
+               <div class="fade-in">
+                  <img src="assets/images/about2.webp" alt="Soil Preparing Service"
+                     class="img-fluid service-image mb-5">
+               </div>
+
+               <div class="service-overview fade-in">
+                  <h2>SERVICE OVERVIEW</h2>
+                  <p class="mb-4">Soil not convinced that gaming is good for you? That's understandable, considering
+                     concerns long raised by parents that include the treatment of women social gaming, violence in
+                     games and gaming addiction. For more information, explore the Safer Gaming Guide from the Family
+                     Online Safety Institute. This absolute best recommendations for parents worried about game safety
+                     or that your kid is gaming too much. Join your kids on their favorite platform.</p>
+
+                  <p>With you can purchase clinical, dental, and vision protection plans for everybody in your family.
+                     As a condition in specific US empowers you to get tax wellbeing inclusion if you need it a choice
+                     from 11,000 choices from 180+ transporters. You can in like manner purchase clinical, dental, and
+                     vision protection plans for everybody in your family. As a condition in specific US suits your
+                     spending plan and needs. When you apply, deals with your application beginning to end, upholding
+                     for your all through to guarantee your wellbeing inclusions are allowed immediately. Get a health
+                     care coverage quote today and give your family the consideration they merit.</p>
+               </div>
+            </div>
+
+            <div class="col-lg-4">
+               <div class="sidebar fade-in">
+                  <h4>OUR SERVICES</h4>
+                  <ul class="service-list">
+                     <li><i class="fas fa-leaf me-2"></i> GREEN TECHNOLOGY</li>
+                     <li><i class="fas fa-seedling me-2"></i> URBAN GARDENING</li>
+                     <li><i class="fas fa-tree me-2"></i> GARDENING DESIGN & IDEA</li>
+                     <li><i class="fas fa-cannabis me-2"></i> SOIL PREPARING</li>
+                  </ul>
+
+                  <h4 class="mt-4">OUR MATERIALS</h4>
+                  <button class="download-btn">
+                     <i class="fas fa-file-pdf me-2"></i> COMPANY PROFILE
+                  </button>
+                  <button class="download-btn">
+                     <i class="fas fa-file-alt me-2"></i> SERVICE DETAILS
+                  </button>
+                  <button class="download-btn">
+                     <i class="fas fa-user-tie me-2"></i> SERVICE TECHNICIAN
+                  </button>
+
+                  <div class="mt-4">
+                     <img
+                        src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                        alt="Plant Care" class="img-fluid rounded">
+                     <div class="text-center mt-2">
+                        <small class="text-muted">300 X 400</small>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- How We Work -->
+   <section class="how-we-work">
+      <div class="container">
+         <div class="text-center mb-5 fade-in">
+            <h2 class="text-uppercase" style="color: var(--primary-green); font-weight: 600; letter-spacing: 2px;">HOW
+               WE WORKS</h2>
+         </div>
+
+         <div class="row">
+            <div class="col-md-4">
+               <div class="work-step fade-in">
+                  <div class="work-icon">
+                     <i class="fas fa-drafting-compass"></i>
+                  </div>
+                  <h4>GARDEN DESIGN</h4>
+                  <p>Whether you are looking for plants, trees, shrubs or garden accessories.</p>
+               </div>
+            </div>
+
+            <div class="col-md-4">
+               <div class="work-step fade-in">
+                  <div class="work-icon">
+                     <i class="fas fa-filter"></i>
+                  </div>
+                  <h4>SOIL FILTERING</h4>
+                  <p>Whether you are looking for plants, trees, shrubs or garden accessories.</p>
+               </div>
+            </div>
+
+            <div class="col-md-4">
+               <div class="work-step fade-in">
+                  <div class="work-icon">
+                     <i class="fas fa-seedling"></i>
+                  </div>
+                  <h4>READY TO PLANT</h4>
+                  <p>Whether you are looking for plants, trees, shrubs or garden accessories.</p>
+               </div>
+            </div>
+         </div>
+
+         <div class="row mt-5">
+            <div class="col-12 fade-in">
+               <p class="text-center">Soil not convinced that gaming is good for you? That's understandable, considering
+                  concerns long raised by parents that include the treatment of women social gaming, violence in games
+                  and gaming addiction. For more information, explore the Safer Gaming Guide from the Family Online
+                  Safety Institute. This absolute best recommendations for parents worried about game safety or that
+                  your kid is gaming too much. Join your kids on their favorite platform.</p>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- Gallery Section - Fixed Size Images -->
+   <section class="gallery-section">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-6">
+               <div class="gallery-container fade-in">
+                  <img
+                     src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                     alt="Garden Work" class="gallery-image">
+               </div>
+            </div>
+            <div class="col-md-6">
+               <div class="gallery-container fade-in">
+                  <img
+                     src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                     alt="Professional Gardening" class="gallery-image">
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- Core Features -->
+   <section class="core-features">
+      <div class="container">
+         <h2 class="fade-in">CORE FEATURES</h2>
+
+         <div class="row">
+            <div class="col-md-4">
+               <div class="feature-box fade-in">
+                  <h5>Easy Sign-up</h5>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="feature-box fade-in">
+                  <h5>Business Content Makers</h5>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="feature-box fade-in">
+                  <h5>Overall Marketing</h5>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="feature-box fade-in">
+                  <h5>Biggest Social Channels</h5>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="feature-box fade-in">
+                  <h5>Business Associates</h5>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="feature-box fade-in">
+                  <h5>Interaction between</h5>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="feature-box fade-in">
+                  <h5>Customers and search</h5>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="feature-box fade-in">
+                  <h5>Traffic responsibility</h5>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="feature-box fade-in">
+                  <h5>SEO strategy</h5>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- footer-trail -->
+   <footer class="footer-trail">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+               <h5>ABOUT US</h5>
+               <p>In that team is an online space between people to clean can be encountered a type of this from or
+                  contact while garden is an outdoor area consisting one or more types of plants.</p>
+               <div class="social-icons mt-3">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+               </div>
+               <div class="mt-3">
+                  <i class="fas fa-phone me-2"></i> 985 659 631 68
+               </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+               <h5>MAIN PAGES</h5>
+               <ul>
+                  <li><a href="#">HOME</a></li>
+                  <li><a href="#">ABOUT</a></li>
+                  <li><a href="#">SERVICES</a></li>
+                  <li><a href="#">NEWS</a></li>
+                  <li><a href="#">PRICING</a></li>
+               </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+               <h5>OUR SERVICES</h5>
+               <ul>
+                  <li><a href="#">LAWN MOWING</a></li>
+                  <li><a href="#">HEDGE CUTTING</a></li>
+                  <li><a href="#">FLOWER PLANTING</a></li>
+                  <li><a href="#">GARDEN REMODELING</a></li>
+                  <li><a href="#">GARDEN RESTORATION</a></li>
+               </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+               <h5>GET IN TOUCH</h5>
+               <ul>
+                  <li><i class="fas fa-phone me-2"></i> 1-800-700-600</li>
+                  <li><i class="fas fa-envelope me-2"></i> INFO@YOUREMAIL.COM</li>
+                  <li><i class="fas fa-map-marker-alt me-2"></i> 69 EAST 45TH STREET, NEW YORK CITY, NY 10065</li>
+               </ul>
+               <div class="mt-3">
+                  <strong>CONNECT:</strong>
+                  <div class="social-icons mt-2">
+                     <a href="#"><i class="fab fa-facebook-f"></i></a>
+                     <a href="#"><i class="fab fa-twitter"></i></a>
+                     <a href="#"><i class="fab fa-instagram"></i></a>
+                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <hr class="my-4" style="border-color: #4a7c59;">
+
+         <div class="row align-items-center">
+            <div class="col-md-6">
+               <div class="d-flex align-items-center">
+                  <div class="logo me-3">
+                     <div
+                        style="width: 40px; height: 40px; background: var(--accent-green); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-leaf" style="color: white;"></i>
+                     </div>
+                  </div>
+                  <h4 style="color: var(--accent-green); margin: 0;">Gardomia</h4>
+               </div>
+            </div>
+            <div class="col-md-6 text-md-end">
+               <p class="mb-0">COPYRIGHT & DESIGN BY <strong>GARDOMIA</strong> - 2022</p>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <!-- pre loader area start -->
+   <div id="loading">
+      <div id="loading-center">
+         <div id="loading-center-absolute">
+            <div class="loading-icon text-center d-flex flex-column align-items-center justify-content-center">
+
+               <img src="assets/img/logo/logo-text.png" alt="">
+               <img class="loading-logo" src="assets/img/logo/preloader.svg" alt="">
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- pre loader area end -->
+
+   <!-- back to top start -->
+   <div class="progress-wrap">
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+   </div>
+   <!-- back to top end -->
+
+   <!-- Bootstrap JS -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   <!-- jQuery -->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+   <script>
+      $(document).ready(function () {
+         // Fade in animation on scroll
+         function fadeInOnScroll() {
+            $('.fade-in').each(function () {
+               var elementTop = $(this).offset().top;
+               var elementBottom = elementTop + $(this).outerHeight();
+               var viewportTop = $(window).scrollTop();
+               var viewportBottom = viewportTop + $(window).height();
+
+               if (elementBottom > viewportTop && elementTop < viewportBottom) {
+                  $(this).addClass('visible');
+               }
+            });
+         }
+
+         // Download button clicks
+         $('.download-btn').click(function () {
+            var buttonText = $(this).text().trim();
+            alert('Downloading: ' + buttonText);
+            // Here you would implement actual download functionality
+         });
+
+         // Service list hover effects
+         $('.service-list li').hover(
+            function () {
+               $(this).css('cursor', 'pointer');
+            },
+            function () {
+               $(this).css('cursor', 'default');
+            }
+         );
+
+         // Feature box click effects
+         $('.feature-box').click(function () {
+            $(this).toggleClass('active');
+         });
+
+         // Smooth scrolling for anchor links
+         $('a[href^="#"]').on('click', function (event) {
+            var target = $(this.getAttribute('href'));
+            if (target.length) {
+               event.preventDefault();
+               $('html, body').stop().animate({
+                  scrollTop: target.offset().top - 100
+               }, 1000);
+            }
+         });
+
+         // Initial fade in check
+         fadeInOnScroll();
+
+         // Loading animation
+         $('body').addClass('loaded');
+      });
+
+      // Additional jQuery effects
+      $(window).on('load', function () {
+         // Preloader effect (if needed)
+         $('.fade-in').each(function (index) {
+            $(this).delay(index * 100).queue(function () {
+               $(this).addClass('visible').dequeue();
+            });
+         });
+      });
+   </script>
+
+
+   <!-- JS here -->
+   <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+   <script src="assets/js/vendor/waypoints.min.js"></script>
+   <script src="assets/js/bootstrap.bundle.min.js"></script>
+   <script src="assets/js/meanmenu.js"></script>
+   <script src="assets/js/swiper-bundle.min.js"></script>
+   <script src="assets/js/owl.carousel.min.js"></script>
+   <script src="assets/js/magnific-popup.min.js"></script>
+   <script src="assets/js/parallax.min.js"></script>
+   <script src="assets/js/backToTop.js"></script>
+   <script src="assets/js/jquery-ui-slider-range.js"></script>
+   <script src="assets/js/nice-select.min.js"></script>
+   <script src="assets/js/counterup.min.js"></script>
+   <script src="assets/js/ajax-form.js"></script>
+   <script src="assets/js/wow.min.js"></script>
+   <script src="assets/js/beforeafter.jquery-1.0.0.js"></script>
+   <script src="assets/js/isotope.pkgd.min.js"></script>
+   <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+   <script src="assets/js/main.js"></script>
+</body>
+
+</html>
