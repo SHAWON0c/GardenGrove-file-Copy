@@ -5139,6 +5139,7 @@ html {
   background: #f4f7f7;
 }
 .client-single img {
+  width: 70%;
   opacity: 0.6;
   transition: 0.3s;
 }
@@ -8306,8 +8307,17 @@ html {
   font-size: 24px;
   text-transform: uppercase;
 }
+
+.portfolio-hover-style .portfolio-thumb {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  height: 260px;
+}
 .portfolio-hover-style .portfolio-thumb img {
   width: 100%;
+  height: 100%;
 }
 
 .style-2.portfolio-hover-style .portfolio-content {
@@ -13787,6 +13797,13 @@ p.checkout-coupon input[type="text"]:focus {
   right: 0;
 }
 
+.pricing-shape img {
+  width: 70%;
+  /* margin: 0 auto;
+  display: block; */
+  filter: grayscale(100%) opacity(0.2);
+}
+
 .single-pricing {
   position: relative;
 }
@@ -13919,7 +13936,15 @@ p.checkout-coupon input[type="text"]:focus {
 }
 
 .fact-icon {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
   margin-bottom: 15px;
+}
+
+.fact-icon img {
+  width: 40px;
+  height: 40px;
 }
 
 .fact-batch {
@@ -14618,7 +14643,7 @@ p.checkout-coupon input[type="text"]:focus {
   }
 }
 .style-4 .testimonial-content:hover .testimonial-4-shape {
-  opacity: 1;
+  opacity: 0.1;
   transform: translateY(0);
 }
 .style-4 .testimonial-icon {
@@ -14662,9 +14687,13 @@ p.checkout-coupon input[type="text"]:focus {
   border-radius: 50%;
   position: relative;
   z-index: 2;
+  overflow: hidden;
+  object-fit: cover;
 }
 .style-4 .author-img img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .style-4 .author-meta-rating {
   display: flex;
@@ -14737,6 +14766,7 @@ p.checkout-coupon input[type="text"]:focus {
   top: 18px;
   opacity: 0;
   transform: translateY(20px);
+  width: 200px;
 }
 
 .testimonial-4-nav-button {
@@ -15331,7 +15361,7 @@ p.checkout-coupon input[type="text"]:focus {
   }
 }
 .style-4 .features-thumb {
-  width: 47%;
+  width: 100%;
   overflow: hidden;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -15415,7 +15445,7 @@ p.checkout-coupon input[type="text"]:focus {
 }
 
 .style-4 .features-wrapper {
-  margin-top: -80px;
+  margin-top: 60px;
 }
 
 .style-4.clients-wrapper {
